@@ -1,14 +1,11 @@
-# Use an official OpenJDK image as a parent image
-FROM openjdk:17-jdk-slim
+# Use an official Tomcat image as a parent image
+FROM tomcat:10.1-jdk17-openjdk-slim
 
 # Set the working directory in the container
-WORKDIR /usr/src/app
+WORKDIR /usr/local/tomcat/webapps
 
 # Copy the built war file into the container
-COPY target/*.war ./JAVA_PROJECT.war
+COPY target/*.war ./
 
-# Expose the port that the web app will run on
+# Expose the port that Tomcat will run on
 EXPOSE 8086
-
-# Run the application when the container starts.  
-CMD ["java", "-jar", "/usr/src/app/java_project.war"]
