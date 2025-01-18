@@ -16,6 +16,6 @@ public class MyServlet extends HttpServlet {
             throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
-        out.println("<html><body><h1>Hello from Docker!</h1></body></html>");
+        system.out.println("<html><body><h1>Hello from Docker!</h1></body></html>");
     }
 }
